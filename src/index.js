@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 
 import { populateProduce } from './store/produce';
+import { cartReducer } from './store/cart';
 
 const store = configureStore();
 
@@ -23,6 +24,7 @@ function Root() {
 if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.populateProduce = populateProduce;
+  window.cartReducer = cartReducer;
 }
 
 ReactDOM.render(
