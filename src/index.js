@@ -6,12 +6,13 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 
+import { populateProduce } from './store/produce';
 
 const store = configureStore();
 
 function Root() {
   return (
-    <Provider sotre={store}>
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
@@ -21,6 +22,7 @@ function Root() {
 
 if (process.env.NODE_ENV !== "production") {
   window.store = store;
+  window.populateProduce = populateProduce;
 }
 
 ReactDOM.render(
